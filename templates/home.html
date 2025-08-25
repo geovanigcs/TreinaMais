@@ -1,0 +1,298 @@
+{% extends 'base.html' %}
+
+{% block title %}Treina+ | Equipamentos Esportivos Premium{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center hero-content">
+            <div class="col-lg-6">
+                <h1 class="hero-title">Transforme Seu Treino</h1>
+                <p class="hero-subtitle">Descubra equipamentos esportivos de alta qualidade para alcançar seus objetivos fitness com estilo e elegância.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#produtos" class="btn btn-luxury btn-lg">
+                        Explorar Produtos
+                    </a>
+                    <a href="#categorias" class="btn btn-outline-light btn-lg">
+                        Ver Categorias
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                     alt="Equipamentos de Treino" 
+                     class="img-fluid rounded-4 shadow-lg"
+                     style="max-width: 500px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Search Section -->
+<section class="py-5" style="margin-top: -60px; position: relative; z-index: 10;">
+    <div class="container">
+        <div class="search-luxury">
+            <form class="d-flex">
+                <input class="form-control" type="search" placeholder="Busque por produtos, marcas ou categorias...">
+                <button class="btn btn-luxury" type="submit">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section -->
+<section id="categorias" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="luxury-heading display-4 mb-3">Nossas Categorias</h2>
+            <p class="lead text-muted">Encontre exatamente o que precisa para seu treino</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h4 class="luxury-heading">Musculação</h4>
+                    <p>Halteres, barras, anilhas e equipamentos para treino de força</p>
+                    <a href="#" class="btn btn-outline-luxury mt-3">Ver Produtos</a>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h4 class="luxury-heading">Cardio</h4>
+                    <p>Esteiras, bicicletas e equipamentos cardiovasculares</p>
+                    <a href="#" class="btn btn-outline-luxury mt-3">Ver Produtos</a>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h4 class="luxury-heading">Roupas</h4>
+                    <p>Roupas esportivas e acessórios de alta performance</p>
+                    <a href="#" class="btn btn-outline-luxury mt-3">Ver Produtos</a>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h4 class="luxury-heading">Suplementos</h4>
+                    <p>Whey protein, creatina e suplementos nutricionais</p>
+                    <a href="#" class="btn btn-outline-luxury mt-3">Ver Produtos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products -->
+<section id="produtos" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="luxury-heading display-4 mb-3">Produtos em Destaque</h2>
+            <p class="lead text-muted">Selecionamos os melhores produtos para você</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="product-card">
+                    <div class="product-badge">-25%</div>
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Halteres Ajustáveis" class="product-image">
+                    <div class="product-info">
+                        <div class="product-brand">Nike Training</div>
+                        <h5 class="product-title">Halteres Ajustáveis Premium</h5>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-warning me-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-muted">(127 avaliações)</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="product-price">R$ 599,90</span>
+                                <span class="product-price-old">R$ 799,90</span>
+                            </div>
+                            <button class="btn btn-luxury btn-sm" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="product-card">
+                    <div class="product-badge">Novo</div>
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Esteira Elétrica" class="product-image">
+                    <div class="product-info">
+                        <div class="product-brand">TechnoGym</div>
+                        <h5 class="product-title">Esteira Elétrica MyRun</h5>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-warning me-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-muted">(89 avaliações)</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="product-price">R$ 2.999,90</span>
+                            </div>
+                            <button class="btn btn-luxury btn-sm" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Kit de Elásticos" class="product-image">
+                    <div class="product-info">
+                        <div class="product-brand">Adidas</div>
+                        <h5 class="product-title">Kit de Elásticos Premium</h5>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-warning me-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-muted">(203 avaliações)</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="product-price">R$ 149,90</span>
+                            </div>
+                            <button class="btn btn-luxury btn-sm" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="product-card">
+                    <div class="product-badge">-15%</div>
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Whey Protein" class="product-image">
+                    <div class="product-info">
+                        <div class="product-brand">Optimum Nutrition</div>
+                        <h5 class="product-title">Whey Protein Gold Standard</h5>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-warning me-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-muted">(456 avaliações)</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="product-price">R$ 254,90</span>
+                                <span class="product-price-old">R$ 299,90</span>
+                            </div>
+                            <button class="btn btn-luxury btn-sm" onclick="addToCart(this)">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="#" class="btn btn-outline-luxury btn-lg">Ver Todos os Produtos</a>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mb-3">
+                    <i class="fas fa-shipping-fast fa-3x text-primary"></i>
+                </div>
+                <h5>Frete Grátis</h5>
+                <p class="text-muted">Em pedidos acima de R$ 299</p>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mb-3">
+                    <i class="fas fa-shield-alt fa-3x text-success"></i>
+                </div>
+                <h5>Compra Segura</h5>
+                <p class="text-muted">Certificado SSL e pagamento protegido</p>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mb-3">
+                    <i class="fas fa-undo fa-3x text-warning"></i>
+                </div>
+                <h5>Troca Fácil</h5>
+                <p class="text-muted">30 dias para trocar ou devolver</p>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mb-3">
+                    <i class="fas fa-headset fa-3x text-info"></i>
+                </div>
+                <h5>Suporte 24/7</h5>
+                <p class="text-muted">Atendimento especializado sempre</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-5" style="background: var(--luxury-gradient);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-white">
+                <h3 class="luxury-heading mb-3">Fique por Dentro das Novidades</h3>
+                <p class="mb-0">Receba ofertas exclusivas, lançamentos e dicas de treino diretamente no seu e-mail.</p>
+            </div>
+            <div class="col-lg-6">
+                <form class="d-flex gap-3">
+                    <input type="email" class="form-control form-control-lg" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="btn btn-light btn-lg px-4">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
