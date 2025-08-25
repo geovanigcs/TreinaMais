@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: treinamais_prod
+      POSTGRES_USER: treinamais_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    restart: always
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+
+  web:
+    build: .
+    command: gunicorn treinamais.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+    expose:
+      - "8000"
+    environment:
+      - DEBUG=False
+      - DATABASE_URL=postgres://treinamais_user:${POSTGRES_PASSWORD}@db:5432/treinamais_prod
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - db
+      - redis
+    restart: always
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - web
+    restart: always
+
+  celery:
+    build: .
+    command: celery -A treinamais worker -l info
+    volumes:
+      - ./:/app
+    environment:
+      - DEBUG=False
+      - DATABASE_URL=postgres://treinamais_user:${POSTGRES_PASSWORD}@db:5432/treinamais_prod
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - db
+      - redis
+    restart: always
+
+  celery-beat:
+    build: .
+    command: celery -A treinamais beat -l info
+    volumes:
+      - ./:/app
+    environment:
+      - DEBUG=False
+      - DATABASE_URL=postgres://treinamais_user:${POSTGRES_PASSWORD}@db:5432/treinamais_prod
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - db
+      - redis
+    restart: always
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:

@@ -1,0 +1,16 @@
+from django.shortcuts import render
+from django.views.generic import TemplateView
+
+
+class HomeView(TemplateView):
+    """View para a página inicial"""
+    template_name = 'home.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+
+def home_view(request):
+    """View simples para a página inicial"""
+    return render(request, 'home.html')
