@@ -164,9 +164,9 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 📞 Contato
 
-- **Desenvolvedor**: Seu Nome
-- **Email**: seu.email@example.com
-- **LinkedIn**: [seu-perfil](https://linkedin.com/in/seu-perfil)
+- **Desenvolvedor**: Geovani Cordeiro
+- **Email**: [seu.email@example.com](https://gmail.com/)
+- **LinkedIn**: [[seu-perfil](https://linkedin.com/in/seu-perfil)](https://www.linkedin.com/in/geovanicordeirodev/)
 
 ## 🙏 Agradecimentos
 
