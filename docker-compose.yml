@@ -11,52 +11,26 @@ services:
       POSTGRES_PASSWORD: treinamais_password
     ports:
       - "5433:5432"
-
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "6380:6379"
+    restart: unless-stopped
 
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
     ports:
-      - "8000:8000"
+      - "8001:8000"
     environment:
       - DEBUG=1
+      - DJANGO_SETTINGS_MODULE=treinamais.settings_docker
       - DATABASE_URL=postgres://treinamais_user:treinamais_password@db:5432/treinamais_db
-      - REDIS_URL=redis://redis:6379/0
+      - SECRET_KEY=docker-dev-secret-key-change-in-production
     depends_on:
       - db
-      - redis
-
-  celery:
-    build: .
-    command: celery -A treinamais worker -l info
-    volumes:
-      - .:/app
-    environment:
-      - DEBUG=1
-      - DATABASE_URL=postgres://treinamais_user:treinamais_password@db:5432/treinamais_db
-      - REDIS_URL=redis://redis:6379/0
-    depends_on:
-      - db
-      - redis
-
-  celery-beat:
-    build: .
-    command: celery -A treinamais beat -l info
-    volumes:
-      - .:/app
-    environment:
-      - DEBUG=1
-      - DATABASE_URL=postgres://treinamais_user:treinamais_password@db:5432/treinamais_db
-      - REDIS_URL=redis://redis:6379/0
-    depends_on:
-      - db
-      - redis
+    restart: unless-stopped
 
 volumes:
   postgres_data:
+  static_volume:
+  media_volume:
